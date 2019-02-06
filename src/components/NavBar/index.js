@@ -1,13 +1,18 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 
+const styles = {
+    nav: {
+        background: "yellow",
+        color: "black", 
+        fontSize: 30
+    },
 
-
-
+}
 
 function NavBar(props) {
     return (
-        <Navbar>
+        <Navbar style = {styles.nav}>
             <Navbar.Brand>Snoopys Clickety Game</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">

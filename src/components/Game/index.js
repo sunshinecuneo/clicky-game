@@ -6,8 +6,8 @@ import snoopy1 from "./assets/images/snoopy1.jpeg";
 import snoopy2 from "./assets/images/snoopy2.jpg";
 import snoopy3 from "./assets/images/snoopy3.jpg";
 import snoopy4 from "./assets/images/snoopy4.jpg";
-import snoopy5 from "./assets/images/snoopy5.jpg";
-import snoopy6 from "./assets/images/snoopy1.jpeg";
+import snoopy5 from "./assets/images/snoopy16.jpg";
+import snoopy6 from "./assets/images/snoopy6.jpeg";
 import snoopy7 from "./assets/images/snoopy7.jpeg";
 import snoopy8 from "./assets/images/snoopy8.jpeg";
 import snoopy9 from "./assets/images/snoopy9.jpeg";
@@ -15,10 +15,18 @@ import snoopy10 from "./assets/images/snoopy10.jpeg";
 import snoopy11 from "./assets/images/snoopy11.png";
 import snoopy12 from "./assets/images/snoopy12.jpeg";
 
+const styles = {
+    imgContainer: {
+        background: "blue",
+        marginLeft: 19,
+    }
+}
+
+
 function ImageCard(props) {
     return (
         <div className="card">
-            <div className="img-container">
+            <div className="img-container" style= {styles.imgContainer}>
                 <img className="images" alt={props.id} src={props.image} onClick={() => props.handleClick(props.id)} />
             </div>
             <span onClick={() => props.removeFriend(props.id)} className="remove"></span>
@@ -87,10 +95,11 @@ class Game extends Component {
     }
 
     winning = () => {
+        this.setState({ topScore: this.state.initialScore });
         if (this.state.initialScore === 12) {
             alert("Woof!")
             this.setState({
-                topScore: this.state.topScore + 1, initialScore: 0, clicked: [], images: this.state.images.sort(function (a, b) {
+                 initialScore: 0, clicked: [], images: this.state.images.sort(function (a, b) {
                     return 0.5 - Math.random();
                 })
             })
@@ -107,7 +116,6 @@ class Game extends Component {
             console.log(this.state.clicked);
             this.setState({ initialScore: this.state.initialScore + 1, images: this.state.images.sort(function (a, b) {
                 return 0.5 - Math.random() }) }, this.winning);
-            
         }
     }
 
