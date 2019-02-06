@@ -1,3 +1,11 @@
+Welcome to my Snoopy Clickety Game! Isn't he cute?!!
+
+Click on a Snoopy to earn points, but don't click on the same Snoopy more than once or your score resets to zero!
+
+Have fun with Snoopy!
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
